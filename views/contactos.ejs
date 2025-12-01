@@ -1,151 +1,123 @@
-import React, { useState } from 'react';
-import { ContactMessage } from '../types';
+<%- include('../templates/head') %>
+<link rel="stylesheet" href="/static/css/contactos.css">
 
-const Contact: React.FC = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
-  });
-  const [submitted, setSubmitted] = useState(false);
+<!-- ===========================
+     HERO SUPERIOR
+=========================== -->
+<section class="contact-hero">
+    <div class="hero-overlay">
+        <img class="hero-logo" src="/static/img/logo-full.png" alt="Integra Health & Sport">
+        <h1>Contacto</h1>
+        <p>Si tienes cualquier duda, consulta o deseas información adicional, estamos aquí para ayudarte.</p>
+    </div>
+</section>
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    // Create new message object
-    const newMessage: ContactMessage = {
-      id: Date.now().toString(),
-      ...formData,
-      date: new Date().toLocaleString()
-    };
+<!-- ===========================
+     CUERPO PRINCIPAL
+=========================== -->
+<section class="contact-body container">
 
-    // Save to localStorage (simulating DB)
-    const existingMessages = JSON.parse(localStorage.getItem('integra_messages') || '[]');
-    localStorage.setItem('integra_messages', JSON.stringify([...existingMessages, newMessage]));
+    <!-- COLUMNA IZQUIERDA -->
+    <div class="contact-info">
+        <h2>Contacta con nosotros</h2>
+        <p>¿Tienes dudas? ¿Quieres hacernos alguna consulta?<br>
+        ¿Quieres conocer más sobre los servicios que ofrecemos?<br>
+        ¿Te apetece reservar una sesión de prueba? Escríbenos.</p>
 
-    setSubmitted(true);
-    setFormData({ name: '', email: '', phone: '', message: '' });
-  };
+        <h3>Visita nuestro centro</h3>
+        <p>📍 Carrer de Francesc Tàrrega, 16, Sant Andreu,<br>08027 — Barcelona</p>
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
-  };
+        <h3>Escríbenos o llámanos</h3>
+        <p>📧 integracontacte@gmail.com<br>
+           📞 (+34) 663 01 38 61</p>
 
-  return (
-    <div className="pt-24 min-h-screen bg-gray-900 text-white animate-fade-in relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-black/50 to-transparent pointer-events-none"></div>
-      
-      <div className="max-w-7xl mx-auto px-4 py-12 relative z-10">
-        <div className="text-center mb-16">
-          <div className="inline-block p-4 rounded-full bg-gray-800 mb-6">
-             <span className="text-4xl">📞</span>
-          </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Contacta con <span className="text-integra">Integracentros</span></h1>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Si tienes cualquier duda o consulta te ayudamos. Contacta con nosotros, te responderemos a la mayor brevedad posible.
-          </p>
+        <h3>Síguenos</h3>
+        <ul class="social-list">
+    <li class="social-item">
+        <img src="/static/icons/facebook.svg" alt="Facebook">
+        <span>Facebook</span>
+    </li>
+
+    <li class="social-item">
+        <img src="/static/icons/instagram.svg" alt="Instagram">
+        <span>Instagram</span>
+    </li>
+
+    <li class="social-item">
+        <img src="/static/icons/gmail.svg" alt="Gmail">
+        <span>Gmail</span>
+    </li>
+</ul>
+    </div>
+
+
+    <!-- COLUMNA DERECHA: FORMULARIO -->
+    <form action="/contacto" method="POST" class="contact-form">
+
+        <% if (success) { %>
+            <div class="alert success">Tu mensaje fue enviado correctamente.</div>
+        <% } %>
+
+        <label>Nombre
+            <input type="text" name="name" required>
+        </label>
+
+        <label>Email
+            <input type="email" name="email" required>
+        </label>
+
+        <label>Teléfono
+            <input type="phone" name="phone">
+        </label>
+
+        <label>Mensaje
+            <textarea name="message" rows="4" required></textarea>
+        </label>
+
+        <!-- CHECKBOX LEGAL -->
+        <label class="legal-check">
+            <input type="checkbox" required>
+            <span onclick="openPolicyModal()">He leído y acepto la política de privacidad.</span>
+        </label>
+
+        <button class="btn-primary" type="submit">Enviar</button>
+
+        <!-- BLOQUE LEGAL -->
+        <div class="legal-text">
+            <h4>Información básica sobre protección de datos</h4>
+            <p>
+                Responsable: INTEGRA Health & Sport.<br>
+                Finalidad: Gestión de datos enviados en el formulario para poder responderte.<br>
+                Legitimación: Consentimiento del interesado.<br>
+                Derechos: Acceder, rectificar y suprimir los datos.<br>
+                Información adicional: Puedes consultar la información detallada en nuestra política de privacidad.
+            </p>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-12 items-start">
-          {/* Info Side */}
-          <div className="lg:w-1/3 space-y-8 bg-gray-800/50 p-8 rounded-2xl backdrop-blur-sm">
-            <div>
-              <h3 className="text-integra font-bold text-lg mb-2">Visita nuestro centro</h3>
-              <p className="text-gray-300">C. Diego Fernández Mendoza, 11,<br/>Puerto de la Torre, 29010 Málaga</p>
-            </div>
-            <div>
-              <h3 className="text-integra font-bold text-lg mb-2">Escríbenos o llámanos</h3>
-              <p className="text-gray-300">info@integracentros.com</p>
-              <p className="text-gray-300 font-mono mt-1">(+34) 952 073 807</p>
-            </div>
-            <div>
-              <h3 className="text-integra font-bold text-lg mb-2">Síguenos</h3>
-              <div className="flex space-x-4">
-                <button className="w-10 h-10 rounded-full bg-gray-700 hover:bg-integra transition-colors flex items-center justify-center">FB</button>
-                <button className="w-10 h-10 rounded-full bg-gray-700 hover:bg-integra transition-colors flex items-center justify-center">IG</button>
-              </div>
-            </div>
-          </div>
+    </form>
 
-          {/* Form Side */}
-          <div className="lg:w-2/3 w-full">
-            {submitted ? (
-              <div className="bg-integra/20 border border-integra p-8 rounded-2xl text-center">
-                <h3 className="text-2xl font-bold text-integra mb-2">¡Mensaje Enviado!</h3>
-                <p className="text-white">Gracias por contactarnos. Te responderemos pronto.</p>
-                <button onClick={() => setSubmitted(false)} className="mt-6 text-sm underline hover:text-integra">Enviar otro mensaje</button>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Nombre"
-                    required
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full bg-gray-800/50 border border-gray-700 rounded-lg px-6 py-4 text-white placeholder-gray-400 focus:outline-none focus:border-integra focus:ring-1 focus:ring-integra transition-all"
-                  />
-                </div>
-                <div>
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Correo electrónico"
-                    required
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full bg-gray-800/50 border border-gray-700 rounded-lg px-6 py-4 text-white placeholder-gray-400 focus:outline-none focus:border-integra focus:ring-1 focus:ring-integra transition-all"
-                  />
-                </div>
-                <div>
-                   <input
-                    type="tel"
-                    name="phone"
-                    placeholder="Teléfono"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full bg-gray-800/50 border border-gray-700 rounded-lg px-6 py-4 text-white placeholder-gray-400 focus:outline-none focus:border-integra focus:ring-1 focus:ring-integra transition-all"
-                  />
-                </div>
-                <div>
-                  <textarea
-                    name="message"
-                    placeholder="Mensaje"
-                    rows={4}
-                    required
-                    value={formData.message}
-                    onChange={handleChange}
-                    className="w-full bg-gray-800/50 border border-gray-700 rounded-lg px-6 py-4 text-white placeholder-gray-400 focus:outline-none focus:border-integra focus:ring-1 focus:ring-integra transition-all resize-none"
-                  <%- include('templates/head') %>
+</section>
 
-                  <main class="container">
-                    <h1>Contacto</h1>
-                    <p>Si tienes cualquier duda o consulta, contáctanos y te responderemos lo antes posible.</p>
 
-                    <section>
-                      <h2>Datos de contacto</h2>
-                      <ul>
-                        <li>Email: info@integracentros.com</li>
-                        <li>Tel: (+34) 952 073 807</li>
-                        <li>Dirección: C. Diego Fernández Mendoza, 11, Puerto de la Torre, 29010 Málaga</li>
-                      </ul>
-                    </section>
+<!-- ===========================
+     MODAL POLÍTICA DE PRIVACIDAD
+=========================== -->
+<div id="privacyModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closePolicyModal()">✕</span>
+        <h2>Política de Privacidad</h2>
+        <p>
+            Según la Ley Orgánica 3/2018 y el Reglamento Europeo (UE) 2016/679 (RGPD), 
+            informamos que los datos proporcionados serán tratados por Integra Health & Sport 
+            con la finalidad de responder a su solicitud.
+        </p>
+        <p>
+            Puede ejercer sus derechos de acceso, rectificación, supresión y oposición 
+            enviando un correo a info@integrahealthsport.com.
+        </p>
+    </div>
+</div>
 
-                    <section>
-                      <h2>Formulario</h2>
-                      <form action="/contactos" method="post">
-                        <label>Nombre<br/><input name="name" required /></label><br/>
-                        <label>Email<br/><input type="email" name="email" required /></label><br/>
-                        <label>Teléfono<br/><input name="phone" /></label><br/>
-                        <label>Mensaje<br/><textarea name="message" rows="4" required></textarea></label><br/>
-                        <button type="submit">Enviar</button>
-                      </form>
-                    </section>
+<script src="/static/js/contacto-modal.js"></script>
 
-                  </main>
-
-                  <%- include('templates/footer') %>
+<%- include('../templates/footer') %>

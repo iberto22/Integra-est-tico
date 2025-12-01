@@ -1,44 +1,35 @@
-import React from 'react';
-import { TEAM } from '../constants';
+<%- include('../templates/head') %>
+<link rel="stylesheet" href="/static/css/nosotros.css">
 
-const About: React.FC = () => {
-  return (
-    <div className="pt-24 min-h-screen bg-gray-50 animate-fade-in">
-      <div className="max-w-7xl mx-auto px-4 py-12">
-        <h1 className="text-4xl md:text-5xl font-bold text-center mb-16">Sobre <span className="text-integra">Nosotros</span></h1>
-        
-        {/* Origin Story */}
-        <div className="bg-white rounded-3xl p-8 md:p-12 shadow-sm mb-20 flex flex-col md:flex-row gap-12 items-center">
-          <div className="md:w-1/2">
-             <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&q=80&w=1000" alt="Gym" className="rounded-2xl shadow-md w-full" />
-          </div>
-          <div className="md:w-1/2 space-y-6">
-            <h2 className="text-2xl font-bold text-gray-800">Nuestra Historia y Propósito</h2>
-            <p className="text-gray-600 leading-relaxed">
-              Integra Health & Sport nació con la misión de transformar vidas a través del movimiento. No somos solo un gimnasio; somos un centro integral donde la salud física y mental convergen.
-            </p>
-            <p className="text-gray-600 leading-relaxed">
-              Desde nuestros inicios en 2015, hemos creído que cada persona es única. Por eso, nos alejamos de las fórmulas genéricas y apostamos por la ciencia, la empatía y la personalización. Nuestro propósito es que logres la mejor versión de ti mismo, de forma segura y sostenible.
-            </p>
-          </div>
-        </div>
+<section class="team container">
+  <h1>Sobre Nosotros</h1>
+  <article class="about">
+    <h2>Nuestra historia</h2>
+    <p>Integra nació de la unión entre profesionales de la salud y el deporte que quisieron crear un espacio donde la rehabilitación y el rendimiento convivieran. Nuestra misión es devolver la funcionalidad, la confianza y el bienestar a cada persona que nos visita.</p>
+    <h3>Filosofía y valores</h3>
+    <p>Trabajamos con ética profesional, evidencia científica y un trato cercano. Creemos en la personalización, la mejora continua y en educar al paciente para que mantenga sus resultados a largo plazo.</p>
+  </article>
 
-        {/* Team Grid */}
-        <h2 className="text-3xl font-bold text-center mb-12 uppercase tracking-wider text-integra">Nuestro Equipo</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          {TEAM.map((member) => (
-            <div key={member.id} className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all text-center group">
-              <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-4 border-gray-100 group-hover:border-integra transition-colors">
-                <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900">{member.name}</h3>
-              <p className="text-sm text-integra font-medium uppercase tracking-wide mt-2">{member.role}</p>
-            </div>
-          ))}
-        </div>
+  <h2>Nuestro Equipo</h2>
+  <div class="team-grid">
+    <% const team = [
+      {name:'Quique', role:'Fisioterapeuta', img:'https://i.pravatar.cc/300?img=11'},
+      {name:'David', role:'Entrenador', img:'https://i.pravatar.cc/300?img=12'},
+      {name:'Belén', role:'Nutricionista', img:'https://i.pravatar.cc/300?img=5'},
+      {name:'Patricia', role:'Osteópata', img:'https://i.pravatar.cc/300?img=9'},
+      {name:'Diego', role:'Fisioterapeuta', img:'https://i.pravatar.cc/300?img=3'},
+      {name:'Raul', role:'Entrenador', img:'https://i.pravatar.cc/300?img=8'}
+    ]; %>
+
+    <% team.forEach(function(member){ %>
+      <div class="card">
+        <img src="<%= member.img %>" alt="<%= member.name %>">
+        <h4><%= member.name %></h4>
+        <p class="role"><%= member.role %></p>
+        <p class="desc">Profesional con amplia experiencia en su área, orientado a resultados y cuidado del paciente.</p>
       </div>
-    </div>
-  );
-};
+    <% }) %>
+  </div>
+</section>
 
-export default About;
+<%- include('../templates/footer') %>

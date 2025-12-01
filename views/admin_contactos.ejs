@@ -1,139 +1,41 @@
-import React, { useState, useEffect } from 'react';
-import { ContactMessage } from '../types';
+<%- include('../templates/head') %>
+<link rel="stylesheet" href="/static/css/admin_contactos.css">
 
-const Admin: React.FC = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [messages, setMessages] = useState<ContactMessage[]>([]);
-  const [error, setError] = useState('');
+<section class="admin container">
+  <% if (!authenticated) { %>
+    <h1>Acceso Admin</h1>
+    <% if (error) { %><div class="alert"> <%= error %> </div><% } %>
+    <form action="/admin" method="post">
+      <label>Usuario<br/><input name="user" required></label>
+      <label>Contraseña<br/><input name="pass" type="password" required></label>
+      <button class="btn primary" type="submit">Entrar</button>
+    </form>
+  <% } else { %>
+    <h1>Contactos registrados</h1>
+    <table class="contacts-table">
+      <thead><tr><th>Nombre</th><th>Email</th><th>Tel</th><th>Mensaje</th><th>Fecha</th><th>Acciones</th></tr></thead>
+      <tbody>
+        <% (contacts||[]).forEach(function(c){ %>
+          <tr>
+            <td><%= c.name %></td>
+            <td><%= c.email %></td>
+            <td><%= c.phone %></td>
+            <td><%= c.message %></td>
+            <td><%= new Date(c.date).toLocaleString() %></td>
+            <td>
+              <form method="post" action="/admin/contactos/delete/<%= c.id %>" onsubmit="return confirm('Borrar?')">
+                <button class="btn danger" type="submit">Borrar</button>
+              </form>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
 
-  // Credentials (simulated from .env)
-  const ADMIN_USER = 'admin';
-  const ADMIN_PASS = '1234';
+    <form action="/admin" method="post" style="margin-top:20px;">
+      <button class="btn outline" type="submit" name="logout" value="1">Cerrar sesión</button>
+    </form>
+  <% } %>
+</section>
 
-  useEffect(() => {
-    if (isAuthenticated) {
-      const stored = localStorage.getItem('integra_messages');
-      if (stored) {
-        setMessages(JSON.parse(stored));
-      }
-    }
-  }, [isAuthenticated]);
-
-  const handleLogin = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (username === ADMIN_USER && password === ADMIN_PASS) {
-      setIsAuthenticated(true);
-      setError('');
-    } else {
-      setError('Credenciales incorrectas');
-    }
-  };
-
-  const handleDelete = (id: string) => {
-    const newMessages = messages.filter(m => m.id !== id);
-    setMessages(newMessages);
-    localStorage.setItem('integra_messages', JSON.stringify(newMessages));
-  };
-
-  if (!isAuthenticated) {
-    return (
-      <div className="pt-32 min-h-screen bg-gray-100 flex items-center justify-center">
-        <div className="bg-white p-8 rounded-2xl shadow-xl w-full max-w-md">
-          <div className="text-center mb-8">
-            <h1 className="text-2xl font-bold text-gray-800">Admin Login</h1>
-            <p className="text-gray-500">Acceso restringido a personal</p>
-          </div>
-          <form onSubmit={handleLogin} className="space-y-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Usuario</label>
-              <input
-                type="text"
-                className="w-full border border-gray-300 px-4 py-2 rounded-lg focus:ring-2 focus:ring-integra focus:border-transparent outline-none"
-                value={username}
-                onChange={e => setUsername(e.target.value)}
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Contraseña</label>
-              <input
-                type="password"
-                className="w-full border border-gray-300 px-4 py-2 rounded-lg focus:ring-2 focus:ring-integra focus:border-transparent outline-none"
-                value={password}
-                onChange={e => setPassword(e.target.value)}
-              />
-            </div>
-            {error && <p className="text-red-500 text-sm text-center">{error}</p>}
-            <button
-              type="submit"
-              className="w-full bg-integra text-white font-bold py-2 rounded-lg hover:bg-integra-dark transition-colors"
-            >
-              Entrar
-            </button>
-          </form>
-        </div>
-      </div>
-    );
-  }
-
-  return (
-    <div className="pt-24 min-h-screen bg-gray-50 animate-fade-in p-4 md:p-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex justify-between items-center mb-8">
-          <h1 className="text-3xl font-bold text-gray-800">Panel de Contactos</h1>
-          <button 
-            onClick={() => setIsAuthenticated(false)}
-            className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition-colors"
-          >
-            Cerrar Sesión
-          </button>
-        </div>
-
-        <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-          <div className="overflow-x-auto">
-            <table className="w-full text-left">
-              <thead className="bg-gray-100 border-b border-gray-200">
-                <tr>
-                  <th className="p-4 font-semibold text-gray-600">Fecha</th>
-                  <th className="p-4 font-semibold text-gray-600">Nombre</th>
-                  <th className="p-4 font-semibold text-gray-600">Email</th>
-                  <th className="p-4 font-semibold text-gray-600">Teléfono</th>
-                  <th className="p-4 font-semibold text-gray-600 w-1/3">Mensaje</th>
-                  <th className="p-4 font-semibold text-gray-600">Acciones</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-100">
-                {messages.length === 0 ? (
-                  <tr>
-                    <td colSpan={6} className="p-8 text-center text-gray-500">No hay mensajes de contacto.</td>
-                  </tr>
-                ) : (
-                  messages.map(msg => (
-                    <tr key={msg.id} className="hover:bg-gray-50 transition-colors">
-                      <td className="p-4 text-sm text-gray-500 whitespace-nowrap">{msg.date}</td>
-                      <td className="p-4 font-medium text-gray-900">{msg.name}</td>
-                      <td className="p-4 text-gray-600">{msg.email}</td>
-                      <td className="p-4 text-gray-600">{msg.phone}</td>
-                      <td className="p-4 text-gray-600 text-sm">{msg.message}</td>
-                      <td className="p-4">
-                        <button 
-                          onClick={() => handleDelete(msg.id)}
-                          className="text-red-500 hover:text-red-700 hover:bg-red-50 px-3 py-1 rounded transition-colors"
-                        >
-                          Eliminar
-                        </button>
-                      </td>
-                    </tr>
-                  ))
-                )}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default Admin;
+<%- include('../templates/footer') %>

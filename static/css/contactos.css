@@ -1,0 +1,237 @@
+/* =======================================
+   HERO
+======================================= */
+.contact-hero {
+    background: #4a4d51;
+    height: 240px;
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-overlay {
+    text-align: center;
+    color: white;
+}
+
+
+.hero-logo {
+    width: 250px;
+    margin: 0; /* antes 10px */
+}
+
+.contact-hero h1 {
+    margin: 6px 0 4px 0;  /* reduce espacio vertical */
+    padding: 0;
+}
+
+/* =============================
+   LAYOUT PRINCIPAL – 2 COLUMNAS
+=============================== */
+.contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;   /* 🟢 izquierda + formulario */
+    gap: 40px;
+    padding: 80px 40px;               /* un poco más de margen */
+    align-items: flex-start;
+}
+
+
+/* =======================================
+   INFO IZQUIERDA
+======================================= */
+.contact-info h2 {
+    font-size: 30px;
+    color: var(--integra-dark);
+}
+
+.contact-info h3 {
+    margin-top: 25px;
+    color: var(--integra-main);
+}
+
+.contact-info p {
+    color: #333;
+}
+
+/* ======================================================
+   SECCIÓN SÍGUENOS - ICONOS + TEXTO
+====================================================== */
+
+/* ======================================================
+   SECCIÓN SÍGUENOS - ICONOS + TEXTO
+====================================================== */
+
+.social-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 10px;
+}
+
+.social-item {
+    display: flex;
+    align-items: center;      /* Alinea icono + texto horizontal */
+    gap: 10px;
+    text-decoration: none;
+    color: #222;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.social-item img {
+    width: 28px;   /* Iconos más grandes */
+    height: 28px;
+    object-fit: contain;
+}
+
+
+.social-item:hover span {
+    color: rgb(46, 82, 46);
+}
+
+
+/* =======================================
+   FORMULARIO
+======================================= */
+/* ===== INPUTS FULL WIDTH ===== */
+.contact-form label {
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: var(--integra-dark);
+    display: block;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 14px;
+    border-radius: 6px;
+    border: 1px solid #b8d9c9;
+    background: #fff;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--integra-main);
+    box-shadow: 0 0 0 3px rgba(62, 163, 122, 0.2);
+}
+
+
+/* =======================================
+   CHECKBOX + TEXTO
+======================================= */
+/* CHECKBOX LEGAL – Alineado perfecto */
+.legal-check {
+    display: flex;
+    align-items: center;      /* ← Clave: centra verticalmente */
+    gap: 10px;
+    cursor: pointer;
+}
+
+/* Ajuste fino del checkbox */
+.legal-check input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin: 0;               /* ← importante para evitar saltos */
+    vertical-align: middle;  /* ← evita que brinque hacia arriba */
+}
+
+/* Texto legal */
+.legal-check span {
+    color: var(--integra-dark);
+    text-decoration: underline;
+    font-size: 15px;
+}
+
+
+/* =======================================
+   BOTÓN
+======================================= */
+/* =======================================================
+   BOTÓN ENVIAR - FULL WIDTH
+========================================================= */
+
+.btn-primary {
+    width: 100%;                     /* 🔥 Ocupa todo el ancho */
+    text-align: center;              /* Centra el texto */
+    background: rgb(103, 183, 121);  /* Verde principal */
+    padding: 14px 0;                 /* Altura uniforme */
+    color: white !important;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    margin-top: 10px;                /* Espacio por encima */
+    margin-bottom: 20px;             /* 🔥 Espacio debajo (separación del bloque legal) */
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    background: rgb(57, 142, 77);     /* Verde oscuro al pasar */
+}
+
+
+/* =======================================
+   BLOQUE LEGAL
+======================================= */
+.legal-text {
+    background: #77a084a7;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 13px;
+}
+
+/* =======================================
+   MODAL PRIVACIDAD
+======================================= */
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(4px);
+    background: rgba(0,0,0,0.4);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 30px;
+    width: 90%;
+    max-width: 480px;
+    border-radius: 12px;
+    box-shadow: 0 15px 45px rgba(0,0,0,0.2);
+    position: relative;
+}
+
+.modal-content h2 {
+    color: var(--integra-main);
+}
+
+.close {
+    position: absolute;
+    right: 14px;
+    top: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* =======================================
+   RESPONSIVE
+======================================= */
+@media (max-width: 900px) {
+    .contact {
+        grid-template-columns: 1fr;   /* una sola columna */
+        padding: 40px 20px;
+    }
+}

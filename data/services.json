@@ -1,0 +1,106 @@
+[
+  {
+    "id": "fisioterapia",
+    "title": "Fisioterapia deportiva",
+    "image": "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&q=80&w=800",
+    "shortDescription": "Tratamientos para lesiones deportivas y recuperación.",
+    "fullDescription": "Tratamientos personalizados para acelerar la recuperación de lesiones deportivas, mejorar la movilidad y prevenir recaídas. Incluye terapia manual, electroterapia y programas de readaptación funcional.",
+    "benefits": [
+      "Evaluación personalizada de la lesión",
+      "Terapia manual y técnicas específicas",
+      "Programas de readaptación funcional",
+      "Prevención de recaídas y educación para el paciente"
+    ]
+  },
+  {
+    "id": "osteopatia",
+    "title": "Osteopatía",
+    "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=800",
+    "shortDescription": "Equilibrio estructural y alivio del dolor.",
+    "fullDescription": "Sesiones centradas en restaurar el equilibrio del cuerpo mediante técnicas manuales que mejoran la función articular y la movilidad muscular.",
+    "benefits": [
+      "Restauración de la movilidad articular",
+      "Alivio del dolor crónico y agudo",
+      "Mejora de la postura y función muscular",
+      "Tratamientos manuales personalizados"
+    ]
+  },
+  {
+    "id": "entrenamiento",
+    "title": "Entrenamiento personal",
+    "image": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=800",
+    "shortDescription": "Planes individualizados para tus objetivos.",
+    "fullDescription": "Planes de entrenamiento a medida que combinan fuerza, cardio y movilidad para obtener resultados seguros y sostenibles.",
+    "benefits": [
+      "Plan individualizado según objetivos",
+      "Seguimiento y ajustes periódicos",
+      "Sesiones centradas en técnica y seguridad",
+      "Mejora de fuerza, resistencia y movilidad"
+    ]
+  },
+  {
+    "id": "readaptacion",
+    "title": "Readaptación funcional",
+    "image": "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&q=80&w=800",
+    "shortDescription": "Reintegro a la actividad tras lesión.",
+    "fullDescription": "Programas progresivos diseñados para recuperar rendimiento y prevenir nuevas lesiones tras una lesión o cirugía.",
+    "benefits": [
+      "Programas progresivos y seguros",
+      "Reintegración a la actividad deportiva",
+      "Prevención de futuras lesiones",
+      "Evaluación funcional continua"
+    ]
+  },
+  {
+    "id": "nutricion",
+    "title": "Nutrición deportiva",
+    "image": "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=800",
+    "shortDescription": "Asesoramiento nutricional para rendimiento.",
+    "fullDescription": "Planes personalizados que equilibran rendimiento y salud, atendiendo a necesidades energéticas y objetivos individuales.",
+    "benefits": [
+      "Plan nutricional personalizado",
+      "Asesoramiento en suplementación deportiva",
+      "Control y seguimiento de composición corporal",
+      "Educación alimentaria para rendimiento"
+    ]
+  },
+  {
+    "id": "masaje",
+    "title": "Masaje terapéutico",
+    "image": "https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?auto=format&fit=crop&q=80&w=800",
+    "shortDescription": "Alivio muscular y prevención de lesiones.",
+    "fullDescription": "Técnicas de masaje terapéutico para reducir tensión muscular, mejorar circulación y acelerar la recuperación.",
+    "benefits": [
+      "Reducción de la tensión muscular",
+      "Mejora de la circulación local",
+      "Alivio del dolor y molestias",
+      "Aceleración de la recuperación muscular"
+    ]
+  },
+  {
+    "id": "pilates",
+    "title": "Pilates terapéutico",
+    "image": "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&q=80&w=800",
+    "shortDescription": "Mejora del core, equilibrio y control.",
+    "fullDescription": "Clases y sesiones individuales centradas en la estabilidad del core, la postura y la movilidad funcional.",
+    "benefits": [
+      "Fortalecimiento del core y estabilidad",
+      "Mejora de la postura y alineación",
+      "Aumento de la flexibilidad y control",
+      "Reducción del riesgo de lesiones"
+    ]
+  },
+  {
+    "id": "recuperacion",
+    "title": "Recuperación de lesiones",
+    "image": "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&q=80&w=800",
+    "shortDescription": "Protocolos de rehabilitación avanzada.",
+    "fullDescription": "Estrategias integradas de fisioterapia, osteopatía y readaptación para acelerar recuperación y recuperar la funcionalidad.",
+    "benefits": [
+      "Protocolos integrados y personalizados",
+      "Recuperación funcional acelerada",
+      "Monitoreo continuo del progreso",
+      "Reforzamiento y prevención a largo plazo"
+    ]
+  }
+]

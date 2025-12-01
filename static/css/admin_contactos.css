@@ -1,0 +1,4 @@
+.contacts-table{width:100%;border-collapse:collapse}
+.contacts-table th,.contacts-table td{border:1px solid #eee;padding:8px;text-align:left}
+.contacts-table th{background:#f7f7f7}
+.btn.danger{background:#e53935}

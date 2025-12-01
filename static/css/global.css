@@ -1,0 +1,287 @@
+/* ============================
+   GLOBAL STYLES — global.css
+============================ */
+
+:root {
+  --green-main: #56976ed2;
+  --green-light: #78df9dc6;
+  --green-dark: #15803d;
+
+  --bg: #ffffff;
+  --text: #0f172a;
+  --muted: #64748b;
+
+  --radius: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Layout general */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ============================
+   HEADER
+============================ */
+.logo-circle img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(6px);
+  z-index: 80;
+  padding: 12px 24px;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  text-decoration: none;
+}
+
+.logo-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  
+  color: var(--green-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  margin-right: 14px;
+}
+
+.brand-text {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* Nav */
+.main-nav a {
+  margin-left: 24px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 6px 8px;
+}
+
+.main-nav a:hover {
+  color: var(--green-light);
+}
+
+/* ============================
+   FOOTER
+/* -----------------------
+   FOOTER PROFESIONAL
+------------------------ */
+
+.site-footer {
+  background: linear-gradient(90deg, #0b3d2e, #0f7a4d);
+  color: #fff;
+  padding: 60px 0;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+.footer-col h3 {
+  margin-bottom: 12px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.footer-col a {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.footer-col a:hover {
+  color: #c8ffd9;
+}
+
+/* Iconos redondos */
+.icon-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.18);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+  transition: 0.3s;
+}
+
+.icon-circle:hover {
+  background: rgba(70, 184, 114, 0.712);
+}
+
+.icon-circle img {
+  width: 20px;
+  height: 20px;
+  filter: invert(1);
+}
+
+/* Copy */
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  opacity: 0.8;
+}
+
+
+/* Footer map size fix */
+.footer-map iframe {
+  width: 320px;       /* Ajusta aquí */
+  height: 240px;      /* Ajusta aquí */
+  border-radius: 14px;
+  border: none;
+}
+
+@media (max-width: 900px) {
+  .footer-map iframe {
+    width: 100%;
+    height: 220px;
+  }
+}
+
+
+/* ============================
+   BUTTONS
+============================ */
+
+.btn {
+  display: inline-block;
+  padding: 12px 18px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+  color: #fff;
+}
+
+.btn.primary {
+  background: var(--green-main);
+}
+
+.btn.primary:hover {
+  background: var(--green-dark);
+}
+
+.btn.outline {
+  border: 2px solid var(--green-main);
+  color: rgb(36, 35, 35);
+  background: transparent;
+}
+
+.btn.outline:hover {
+  background: var(--green-light);
+  color: #0f172a;
+}
+
+/* Titles */
+h1, h2 {
+  color: var(--text);
+}
+
+p {
+  color: white;
+}
+
+
+
+
+
+/* ============================
+para moviles
+============================ */
+@media (max-width: 700px) {
+   /* solo para móvil */
+}
+
+/* =======================================
+   RESPONSIVE PARA MOBILE (solo <700px)
+======================================= */
+@media (max-width: 700px) {
+
+  /* HEADER */
+  .nav-container {
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+
+  .logo-box {
+    width: 32px;
+    height: 32px;
+  }
+
+  .brand-text {
+    font-size: 14px;
+  }
+
+  .main-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  /* FOOTER */
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+    padding: 0 20px;
+  }
+
+  .footer-col {
+    width: 100%;
+  }
+
+  .footer-col a {
+    justify-content: center;
+  }
+}

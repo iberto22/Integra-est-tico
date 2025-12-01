@@ -1,44 +1,18 @@
-import React from 'react';
-import { SERVICES } from '../constants';
+<%- include('../templates/head') %>
+<link rel="stylesheet" href="/static/css/servicios.css">
 
-interface ServicesProps {
-  onSelectService: (serviceId: string) => void;
-}
-
-const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
-  return (
-    <div className="pt-24 min-h-screen bg-white animate-fade-in">
-      <div className="max-w-7xl mx-auto px-4 py-12">
-        <h1 className="text-4xl md:text-5xl font-bold text-center mb-4">Nuestros <span className="text-integra">Servicios</span></h1>
-        <p className="text-center text-gray-500 max-w-2xl mx-auto mb-16">
-          Descubre nuestra gama completa de soluciones para tu salud y rendimiento físico.
-        </p>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {SERVICES.map((service) => (
-            <div key={service.id} className="flex flex-col bg-white border border-gray-100 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
-              <div className="h-48 overflow-hidden relative">
-                 <div className="absolute inset-0 bg-integra/10 mix-blend-multiply transition-opacity hover:opacity-0"></div>
-                 <img src={service.image} alt={service.title} className="w-full h-full object-cover" />
-              </div>
-              <div className="p-8 flex-1 flex flex-col">
-                <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">{service.title}</h3>
-                <p className="text-gray-500 text-sm mb-6 flex-1 text-center leading-relaxed">
-                  {service.shortDescription}
-                </p>
-                <button
-                  onClick={() => onSelectService(service.id)}
-                  className="w-full bg-integra text-white font-bold py-3 rounded-xl hover:bg-integra-dark transition-colors"
-                >
-                  Solicitar Demo
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
+<section class="services container">
+  <h1>Nuestros Servicios</h1>
+  <div class="services-grid">
+    <% services.forEach(function(s){ %>
+      <div class="service-card">
+        <img src="<%= s.image %>" alt="<%= s.title %>">
+        <h3><%= s.title %></h3>
+        <p><%= s.shortDescription %></p>
+        <a class="btn-service" href="/servicio/<%= s.id %>">Leer más</a>
       </div>
-    </div>
-  );
-};
+    <% }) %>
+  </div>
+</section>
 
-export default Services;
+<%- include('../templates/footer') %>

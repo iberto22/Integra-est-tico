@@ -1,0 +1,117 @@
+.team {
+  padding-top: 100px; /* evita que el h1 se esconda detrás del header */
+}
+
+/* Fondo global suave */
+.team {
+  padding-top: 100px;        /* Evita que el header tape el h1 */
+  padding-bottom: 80px;
+}
+
+/* Título principal */
+.team h1 {
+  text-align: center;
+  color: var(--integra-dark);
+  margin-bottom: 30px;
+  font-size: 32px;
+}
+
+/* --- TARJETA DE HISTORIA --- */
+.about {
+  background: #79bf8432;
+  padding: 28px;
+  border-radius: 16px;
+  box-shadow: 0 6px 22px rgba(0,0,0,0.05);
+  margin-bottom: 50px;
+}
+
+.about h2 {
+  color: var(--integra-main);
+  margin-bottom: 10px;
+}
+
+.about h3 {
+  color: var(--integra-dark);
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.about p {
+  color: #444;
+  line-height: 1.6;
+}
+
+
+
+/* --- GRID EQUIPO --- */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  justify-items: center;
+}
+
+/* Tarjeta individual */
+.team-grid .card {
+  background: #7eb58e35;
+  padding: 14px;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 6px 22px rgba(0,0,0,0.06);
+  transition: 0.3s;
+  width: 100%;
+  max-width: 320px;
+}
+
+.team-grid .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+/* Imagen del miembro */
+.team-grid img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Nombre del miembro */
+.card h4 {
+  margin: 12px 0 4px 0;
+  color: var(--integra-main);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* Rol */
+.card .role {
+  color: var(--integra-dark);
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+/* Descripción */
+.card .desc {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* --- RESPONSIVE MÓVIL --- */
+@media (max-width: 800px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+}
+
+@media (max-width: 550px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team h1 {
+    font-size: 28px;
+  }
+}
