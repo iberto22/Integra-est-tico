@@ -2,236 +2,205 @@
    HERO
 ======================================= */
 .contact-hero {
-    background: #4a4d51;
-    height: 240px;
-    margin-top: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background: #f0f4f8; /* Fondo gris azulado claro */
+  padding: 60px 20px;
+  margin-top: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.hero-overlay {
-    text-align: center;
-    color: white;
+.hero-card {
+  background: white;
+  padding: 40px 60px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  max-width: 800px;
+  width: 100%;
 }
 
+.hero-card h1 {
+  color: #4cd195; /* Verde del diseño */
+  margin: 0 0 15px 0;
+  font-size: 32px;
+  font-weight: 700;
+}
 
-.hero-logo {
-    width: 250px;
-    margin: 0; /* antes 10px */
+.hero-card p {
+  color: #555;
+  font-size: 16px;
+  margin: 0;
+  line-height: 1.5;
 }
 
 .contact-hero h1 {
-    margin: 6px 0 4px 0;  /* reduce espacio vertical */
-    padding: 0;
+  margin: 6px 0 4px 0;
+  padding: 0;
 }
 
 /* =============================
-   LAYOUT PRINCIPAL – 2 COLUMNAS
+   LAYOUT PRINCIPAL
 =============================== */
-.contact {
-    display: grid;
-    grid-template-columns: 1fr 1fr;   /* 🟢 izquierda + formulario */
-    gap: 40px;
-    padding: 80px 40px;               /* un poco más de margen */
-    align-items: flex-start;
+.contact-body {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
 
 /* =======================================
-   INFO IZQUIERDA
+   COLUMNA IZQUIERDA: FORMULARIO
 ======================================= */
-.contact-info h2 {
-    font-size: 30px;
-    color: var(--integra-dark);
+.form-column {
+  background: #fff;
+  padding: 10px;
 }
 
-.contact-info h3 {
-    margin-top: 25px;
-    color: var(--integra-main);
+.form-title {
+  color: #1e3a8a; /* Azul oscuro similar a la imagen */
+  font-size: 24px;
+  margin-bottom: 25px;
+  font-weight: 700;
 }
 
-.contact-info p {
-    color: #333;
-}
-
-/* ======================================================
-   SECCIÓN SÍGUENOS - ICONOS + TEXTO
-====================================================== */
-
-/* ======================================================
-   SECCIÓN SÍGUENOS - ICONOS + TEXTO
-====================================================== */
-
-.social-list {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    margin-top: 10px;
-}
-
-.social-item {
-    display: flex;
-    align-items: center;      /* Alinea icono + texto horizontal */
-    gap: 10px;
-    text-decoration: none;
-    color: #222;
-    font-size: 17px;
-    font-weight: 500;
-}
-
-.social-item img {
-    width: 28px;   /* Iconos más grandes */
-    height: 28px;
-    object-fit: contain;
-}
-
-
-.social-item:hover span {
-    color: rgb(46, 82, 46);
-}
-
-
-/* =======================================
-   FORMULARIO
-======================================= */
-/* ===== INPUTS FULL WIDTH ===== */
 .contact-form label {
-    font-weight: 600;
-    margin-bottom: 4px;
-    color: var(--integra-dark);
-    display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #333;
+  display: block;
+  font-size: 15px;
 }
 
 .contact-form input,
 .contact-form textarea {
-    width: 100%;
-    padding: 14px;
-    border-radius: 6px;
-    border: 1px solid #b8d9c9;
-    background: #fff;
-    font-size: 15px;
-    box-sizing: border-box;
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+  background: #fff;
+  font-size: 15px;
+  box-sizing: border-box;
+  color: #555;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #999;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-    outline: none;
-    border-color: var(--integra-main);
-    box-shadow: 0 0 0 3px rgba(62, 163, 122, 0.2);
+  outline: none;
+  border-color: #1e3a8a;
 }
 
-
-/* =======================================
-   CHECKBOX + TEXTO
-======================================= */
-/* CHECKBOX LEGAL – Alineado perfecto */
-.legal-check {
-    display: flex;
-    align-items: center;      /* ← Clave: centra verticalmente */
-    gap: 10px;
-    cursor: pointer;
-}
-
-/* Ajuste fino del checkbox */
-.legal-check input[type="checkbox"] {
-    width: 18px;
-    height: 18px;
-    margin: 0;               /* ← importante para evitar saltos */
-    vertical-align: middle;  /* ← evita que brinque hacia arriba */
-}
-
-/* Texto legal */
-.legal-check span {
-    color: var(--integra-dark);
-    text-decoration: underline;
-    font-size: 15px;
-}
-
-
-/* =======================================
-   BOTÓN
-======================================= */
-/* =======================================================
-   BOTÓN ENVIAR - FULL WIDTH
-========================================================= */
-
+/* BOTÓN ENVIAR */
 .btn-primary {
-    width: 100%;                     /* 🔥 Ocupa todo el ancho */
-    text-align: center;              /* Centra el texto */
-    background: rgb(103, 183, 121);  /* Verde principal */
-    padding: 14px 0;                 /* Altura uniforme */
-    color: white !important;
-    font-weight: bold;
-    border-radius: 10px;
-    cursor: pointer;
-    border: none;
-    margin-top: 10px;                /* Espacio por encima */
-    margin-bottom: 20px;             /* 🔥 Espacio debajo (separación del bloque legal) */
-    display: inline-block;
+  width: 100%;
+  text-align: center;
+  background: #1e3a8a; /* Azul oscuro */
+  padding: 14px 0;
+  color: white !important;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  font-size: 16px;
+  transition: background 0.3s;
 }
 
 .btn-primary:hover {
-    background: rgb(57, 142, 77);     /* Verde oscuro al pasar */
-}
-
-
-/* =======================================
-   BLOQUE LEGAL
-======================================= */
-.legal-text {
-    background: #77a084a7;
-    padding: 12px;
-    border-radius: 10px;
-    font-size: 13px;
+  background: #152c69;
 }
 
 /* =======================================
-   MODAL PRIVACIDAD
+   COLUMNA DERECHA: INFO + MAPA
 ======================================= */
-.modal {
-    display: none;
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    backdrop-filter: blur(4px);
-    background: rgba(0,0,0,0.4);
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
+.info-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.modal-content {
-    background: #fff;
-    padding: 30px;
-    width: 90%;
-    max-width: 480px;
-    border-radius: 12px;
-    box-shadow: 0 15px 45px rgba(0,0,0,0.2);
-    position: relative;
+/* TARJETA VERDE */
+.contact-card {
+  background: #4cd195; /* Verde similar a la imagen */
+  color: white;
+  padding: 30px;
+  border-radius: 8px;
 }
 
-.modal-content h2 {
-    color: var(--integra-main);
+.contact-card h3 {
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-size: 22px;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 15px;
 }
 
-.close {
-    position: absolute;
-    right: 14px;
-    top: 10px;
-    cursor: pointer;
-    font-size: 20px;
-    font-weight: bold;
+.info-item {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.info-item:last-child {
+  margin-bottom: 0;
+}
+
+.icon-circle {
+  width: 40px;
+  height: 40px;
+  /* background: rgba(255,255,255,0.2); */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icon-circle img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1); /* Vuelve blancos los iconos negros */
+}
+
+.info-item h4 {
+  margin: 0 0 5px 0;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.info-item p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  opacity: 0.95;
+}
+
+/* MAPA */
+.map-container {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* =======================================
    RESPONSIVE
 ======================================= */
 @media (max-width: 900px) {
-    .contact {
-        grid-template-columns: 1fr;   /* una sola columna */
-        padding: 40px 20px;
-    }
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
 }

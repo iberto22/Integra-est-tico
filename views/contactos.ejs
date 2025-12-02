@@ -1,123 +1,129 @@
 <%- include('../templates/head') %>
-<link rel="stylesheet" href="/static/css/contactos.css">
+<link rel="stylesheet" href="/static/css/contactos.css" />
 
 <!-- ===========================
      HERO SUPERIOR
 =========================== -->
 <section class="contact-hero">
-    <div class="hero-overlay">
-        <img class="hero-logo" src="/static/img/logo-full.png" alt="Integra Health & Sport">
-        <h1>Contacto</h1>
-        <p>Si tienes cualquier duda, consulta o deseas información adicional, estamos aquí para ayudarte.</p>
-    </div>
+  <div class="hero-card">
+    <h1>Contacta amb nosaltres</h1>
+    <p>
+      Estem aquí per ajudar-te. Envia'ns un missatge o visita'ns al nostre
+      centre.
+    </p>
+  </div>
 </section>
 
 <!-- ===========================
      CUERPO PRINCIPAL
 =========================== -->
 <section class="contact-body container">
+  <div class="contact-wrapper">
+    <!-- COLUMNA IZQUIERDA: FORMULARIO -->
+    <div class="form-column">
+      <h2 class="form-title">Envia'ns un missatge</h2>
 
-    <!-- COLUMNA IZQUIERDA -->
-    <div class="contact-info">
-        <h2>Contacta con nosotros</h2>
-        <p>¿Tienes dudas? ¿Quieres hacernos alguna consulta?<br>
-        ¿Quieres conocer más sobre los servicios que ofrecemos?<br>
-        ¿Te apetece reservar una sesión de prueba? Escríbenos.</p>
-
-        <h3>Visita nuestro centro</h3>
-        <p>📍 Carrer de Francesc Tàrrega, 16, Sant Andreu,<br>08027 — Barcelona</p>
-
-        <h3>Escríbenos o llámanos</h3>
-        <p>📧 integracontacte@gmail.com<br>
-           📞 (+34) 663 01 38 61</p>
-
-        <h3>Síguenos</h3>
-        <ul class="social-list">
-    <li class="social-item">
-        <img src="/static/icons/facebook.svg" alt="Facebook">
-        <span>Facebook</span>
-    </li>
-
-    <li class="social-item">
-        <img src="/static/icons/instagram.svg" alt="Instagram">
-        <span>Instagram</span>
-    </li>
-
-    <li class="social-item">
-        <img src="/static/icons/gmail.svg" alt="Gmail">
-        <span>Gmail</span>
-    </li>
-</ul>
-    </div>
-
-
-    <!-- COLUMNA DERECHA: FORMULARIO -->
-    <form action="/contacto" method="POST" class="contact-form">
-
+      <form action="/contacto" method="POST" class="contact-form">
         <% if (success) { %>
-            <div class="alert success">Tu mensaje fue enviado correctamente.</div>
+        <div class="alert success">
+          El teu missatge s'ha enviat correctament.
+        </div>
         <% } %>
 
-        <label>Nombre
-            <input type="text" name="name" required>
+        <label
+          >Nom complet
+          <input type="text" name="name" placeholder="El teu nom" required />
         </label>
 
-        <label>Email
-            <input type="email" name="email" required>
+        <label
+          >Correu electrònic
+          <input
+            type="email"
+            name="email"
+            placeholder="tucorreu@exemple.com"
+            required
+          />
         </label>
 
-        <label>Teléfono
-            <input type="phone" name="phone">
+        <label
+          >Telèfon
+          <input type="phone" name="phone" placeholder="El teu telèfon" />
         </label>
 
-        <label>Mensaje
-            <textarea name="message" rows="4" required></textarea>
+        <label
+          >Missatge
+          <textarea
+            name="message"
+            rows="4"
+            placeholder="Com et podem ajudar?"
+            required
+          ></textarea>
         </label>
-
-        <!-- CHECKBOX LEGAL -->
-        <label class="legal-check">
-            <input type="checkbox" required>
-            <span onclick="openPolicyModal()">He leído y acepto la política de privacidad.</span>
-        </label>
-
         <button class="btn-primary" type="submit">Enviar</button>
+      </form>
+    </div>
 
-        <!-- BLOQUE LEGAL -->
-        <div class="legal-text">
-            <h4>Información básica sobre protección de datos</h4>
-            <p>
-                Responsable: INTEGRA Health & Sport.<br>
-                Finalidad: Gestión de datos enviados en el formulario para poder responderte.<br>
-                Legitimación: Consentimiento del interesado.<br>
-                Derechos: Acceder, rectificar y suprimir los datos.<br>
-                Información adicional: Puedes consultar la información detallada en nuestra política de privacidad.
-            </p>
+    <!-- COLUMNA DERECHA: INFO + MAPA -->
+    <div class="info-column">
+      <!-- TARJETA VERDE -->
+      <div class="contact-card">
+        <h3>Informació de contacte</h3>
+
+        <div class="info-item">
+          <div class="icon-circle">
+            <img src="/static/icons/location.svg" alt="Ubicació" />
+          </div>
+          <div>
+            <h4>Ubicació</h4>
+            <p>Carrer de Francesc Tàrrega, 16<br />08027 Barcelona</p>
+          </div>
         </div>
 
-    </form>
+        <div class="info-item">
+          <div class="icon-circle">
+            <img src="/static/icons/phone.svg" alt="Telèfon" />
+          </div>
+          <div>
+            <h4>Telèfon</h4>
+            <p>663 01 38 61</p>
+          </div>
+        </div>
 
-</section>
+        <div class="info-item">
+          <div class="icon-circle">
+            <img src="/static/icons/gmail.svg" alt="Email" />
+          </div>
+          <div>
+            <h4>Email</h4>
+            <p>integracontacte@gmail.com</p>
+          </div>
+        </div>
 
+        <div class="info-item">
+          <div class="icon-circle">
+            <img src="/static/icons/clock.svg" alt="Horaris" />
+          </div>
+          <div>
+            <h4>Horaris</h4>
+            <p>Dl - Dv: 9:00 - 21:00<br />Ds: 8:00 - 14:00</p>
+          </div>
+        </div>
+      </div>
 
-<!-- ===========================
-     MODAL POLÍTICA DE PRIVACIDAD
-=========================== -->
-<div id="privacyModal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closePolicyModal()">✕</span>
-        <h2>Política de Privacidad</h2>
-        <p>
-            Según la Ley Orgánica 3/2018 y el Reglamento Europeo (UE) 2016/679 (RGPD), 
-            informamos que los datos proporcionados serán tratados por Integra Health & Sport 
-            con la finalidad de responder a su solicitud.
-        </p>
-        <p>
-            Puede ejercer sus derechos de acceso, rectificación, supresión y oposición 
-            enviando un correo a info@integrahealthsport.com.
-        </p>
+      <!-- MAPA -->
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2992.486362376666!2d2.1834563!3d41.4242683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4bd2a0b0b0b0b%3A0x0!2zQ2FycmVyIGRlIEZyYW5jZXNjIFTDoHJyZWdhLCAxNiwgMDgwMjcgQmFyY2Vsb25h!5e0!3m2!1ses!2ses!4v1600000000000!5m2!1ses!2ses"
+          width="100%"
+          height="250"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+        >
+        </iframe>
+      </div>
     </div>
-</div>
-
-<script src="/static/js/contacto-modal.js"></script>
+  </div>
+</section>
 
 <%- include('../templates/footer') %>
