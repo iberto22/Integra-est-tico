@@ -1,0 +1,114 @@
+[
+  {
+    "id": "osteopatia",
+    "title": "Osteopatia",
+    "shortDescription": "Tratamiento manual para restaurar el equilibrio del cuerpo y mejorar la movilidad.",
+    "fullDescription": "La osteopatía es una terapia manual que busca restaurar el equilibrio del cuerpo mediante técnicas de manipulación suave. Nuestros osteópatas certificados trabajan para identificar y tratar las causas subyacentes del dolor y la disfunción, mejorando la movilidad y promoviendo la salud integral.",
+    "image": "/static/img/logo-full.png",
+    "benefits": [
+      "Alivio del dolor muscular y articular",
+      "Mejora de la movilidad y flexibilidad",
+      "Reducción del estrés y la tensión",
+      "Tratamiento de lesiones deportivas",
+      "Mejora de la postura corporal"
+    ]
+  },
+  {
+    "id": "fisioterapia",
+    "title": "Fisioteràpia",
+    "shortDescription": "Recuperación funcional mediante técnicas especializadas y ejercicios terapéuticos.",
+    "fullDescription": "Nuestro servicio de fisioterapia ofrece tratamientos personalizados para la recuperación de lesiones, mejora de la función física y prevención de futuras dolencias. Utilizamos técnicas avanzadas y equipamiento especializado para garantizar los mejores resultados.",
+    "image": "/static/img/logo-full.png",
+    "benefits": [
+      "Recuperación post-operatoria",
+      "Tratamiento de lesiones deportivas",
+      "Rehabilitación neurológica",
+      "Terapia manual especializada",
+      "Programas de ejercicio terapéutico"
+    ]
+  },
+  {
+    "id": "indiba",
+    "title": "Indiba",
+    "shortDescription": "Tecnología de radiofrecuencia para regeneración celular y recuperación acelerada.",
+    "fullDescription": "INDIBA es una tecnología avanzada de radiofrecuencia que estimula la regeneración celular natural del cuerpo. Es efectiva para el tratamiento de lesiones, reducción del dolor y mejora de la circulación, acelerando significativamente los procesos de recuperación.",
+    "image": "/static/img/logo-full.png",
+    "benefits": [
+      "Aceleración de la recuperación de lesiones",
+      "Reducción de la inflamación",
+      "Mejora de la circulación sanguínea",
+      "Alivio del dolor crónico",
+      "Regeneración de tejidos"
+    ]
+  },
+  {
+    "id": "acupuntura",
+    "title": "Acupuntura",
+    "shortDescription": "Medicina tradicional china para equilibrar la energía y aliviar dolencias.",
+    "fullDescription": "La acupuntura es una técnica milenaria de la medicina tradicional china que utiliza agujas finas para estimular puntos específicos del cuerpo. Este tratamiento ayuda a equilibrar la energía vital, aliviar el dolor y tratar diversas condiciones de salud de manera natural.",
+    "image": "/static/img/logo-full.png",
+    "benefits": [
+      "Alivio del dolor crónico",
+      "Reducción del estrés y ansiedad",
+      "Mejora del sueño",
+      "Tratamiento de migrañas",
+      "Fortalecimiento del sistema inmunológico"
+    ]
+  },
+  {
+    "id": "camara-hiperbarica",
+    "title": "Cambra hiperbàrica",
+    "shortDescription": "Oxigenación celular avanzada para recuperación y bienestar óptimo.",
+    "fullDescription": "La cámara hiperbárica es un tratamiento que aumenta la concentración de oxígeno en el cuerpo mediante presión atmosférica elevada. Este proceso acelera la curación, mejora el rendimiento deportivo y proporciona numerosos beneficios para la salud.",
+    "image": "/static/img/logo-full.png",
+    "benefits": [
+      "Aceleración de la recuperación muscular",
+      "Mejora del rendimiento deportivo",
+      "Reducción de la fatiga",
+      "Estimulación de la regeneración celular",
+      "Mejora de la cicatrización"
+    ]
+  },
+  {
+    "id": "massatge",
+    "title": "Massatge",
+    "shortDescription": "Terapia manual para relajación, alivio del dolor y bienestar general.",
+    "fullDescription": "Nuestros masajes terapéuticos combinan técnicas tradicionales y modernas para proporcionar relajación profunda, alivio del dolor muscular y mejora de la circulación. Cada sesión se personaliza según las necesidades específicas de cada paciente.",
+    "image": "/static/img/logo-full.png",
+    "benefits": [
+      "Relajación muscular profunda",
+      "Alivio del estrés y tensión",
+      "Mejora de la circulación",
+      "Reducción del dolor muscular",
+      "Mejora del bienestar general"
+    ]
+  },
+  {
+    "id": "pressoterapia",
+    "title": "Pressoteràpia",
+    "shortDescription": "Drenaje linfático mediante presión controlada para mejorar la circulación.",
+    "fullDescription": "La presoterapia es un tratamiento que utiliza presión de aire controlada para estimular el sistema linfático y mejorar la circulación. Es ideal para la recuperación deportiva, reducción de la retención de líquidos y mejora de la salud vascular.",
+    "image": "/static/img/logo-full.png",
+    "benefits": [
+      "Mejora de la circulación linfática",
+      "Reducción de la retención de líquidos",
+      "Alivio de piernas cansadas",
+      "Recuperación post-entrenamiento",
+      "Mejora de la salud vascular"
+    ]
+  },
+  {
+    "id": "drenatge-limfatic",
+    "title": "Drenatge limfàtic",
+    "shortDescription": "Masaje especializado para estimular el sistema linfático y eliminar toxinas.",
+    "fullDescription": "El drenaje linfático es una técnica de masaje suave y rítmico que estimula el sistema linfático para eliminar toxinas y líquidos retenidos. Este tratamiento mejora la salud general, reduce la inflamación y fortalece el sistema inmunológico.",
+    "image": "/static/img/logo-full.png",
+    "benefits": [
+      "Eliminación de toxinas",
+      "Reducción de la inflamación",
+      "Fortalecimiento del sistema inmunológico",
+      "Mejora de la piel",
+      "Alivio de la retención de líquidos"
+    ]
+  }
+]
