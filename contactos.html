@@ -65,19 +65,34 @@
               action="https://formspree.io/f/YOUR_FORM_ID"
               method="POST"
               class="contact-form"
+              id="contact-form"
             >
-              <label
-                >Nom complet
+              <!-- Campo oculto para identificar de qué página viene el mensaje -->
+              <input
+                type="hidden"
+                name="_subject"
+                value="Nuevo mensaje desde Integra Health & Sport"
+              />
+
+              <!-- Redirigir después de enviar (opcional) -->
+              <!-- <input type="hidden" name="_next" value="https://tusitio.com/gracias.html" /> -->
+
+              <!-- Evitar captcha de Formspree (solo para plan gratuito) -->
+              <input type="text" name="_gotcha" style="display: none" />
+
+              <label>
+                Nom complet
                 <input
                   type="text"
                   name="name"
                   placeholder="El teu nom"
                   required
+                  minlength="2"
                 />
               </label>
 
-              <label
-                >Correu electrònic
+              <label>
+                Correu electrònic
                 <input
                   type="email"
                   name="email"
@@ -86,21 +101,35 @@
                 />
               </label>
 
-              <label
-                >Telèfon
-                <input type="phone" name="phone" placeholder="El teu telèfon" />
+              <label>
+                Telèfon
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="El teu telèfon"
+                  pattern="[0-9]{9,15}"
+                  title="Introdueix un número de telèfon vàlid (9-15 dígits)"
+                />
               </label>
 
-              <label
-                >Missatge
+              <label>
+                Missatge
                 <textarea
                   name="message"
                   rows="4"
                   placeholder="Com et podem ajudar?"
                   required
+                  minlength="10"
                 ></textarea>
               </label>
+
               <button class="btn-primary" type="submit">Enviar</button>
+
+              <!-- Mensaje de estado (se mostrará con JavaScript) -->
+              <div
+                id="form-status"
+                style="margin-top: 15px; display: none"
+              ></div>
             </form>
           </div>
 

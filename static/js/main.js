@@ -115,3 +115,71 @@ function renderServiceDetail(services) {
     }
   }
 }
+
+// =============================
+// FORMULARI DE CONTACTE
+// =============================
+document.addEventListener("DOMContentLoaded", () => {
+  const contactForm = document.getElementById("contact-form");
+
+  if (contactForm) {
+    contactForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const formStatus = document.getElementById("form-status");
+      const submitButton = contactForm.querySelector('button[type="submit"]');
+      const originalButtonText = submitButton.textContent;
+
+      // Mostrar estat de càrrega
+      submitButton.textContent = "Enviant...";
+      submitButton.disabled = true;
+      formStatus.style.display = "none";
+
+      try {
+        const formData = new FormData(contactForm);
+        const response = await fetch(contactForm.action, {
+          method: "POST",
+          body: formData,
+          headers: {
+            Accept: "application/json",
+          },
+        });
+
+        if (response.ok) {
+          // Èxit
+          formStatus.innerHTML = `
+            <div style="padding: 15px; background-color: #d4edda; color: #155724; border-radius: 8px; border: 1px solid #c3e6cb;">
+              ✅ <strong>Missatge enviat correctament!</strong><br>
+              Ens posarem en contacte amb tu aviat.
+            </div>
+          `;
+          formStatus.style.display = "block";
+          contactForm.reset();
+        } else {
+          // Error del servidor
+          const data = await response.json();
+          formStatus.innerHTML = `
+            <div style="padding: 15px; background-color: #f8d7da; color: #721c24; border-radius: 8px; border: 1px solid #f5c6cb;">
+              ❌ <strong>Error en enviar el missatge.</strong><br>
+              Si us plau, intenta-ho de nou o contacta'ns directament.
+            </div>
+          `;
+          formStatus.style.display = "block";
+        }
+      } catch (error) {
+        // Error de xarxa
+        formStatus.innerHTML = `
+          <div style="padding: 15px; background-color: #f8d7da; color: #721c24; border-radius: 8px; border: 1px solid #f5c6cb;">
+            ❌ <strong>Error de connexió.</strong><br>
+            Comprova la teva connexió a Internet i torna-ho a intentar.
+          </div>
+        `;
+        formStatus.style.display = "block";
+      } finally {
+        // Restaurar botó
+        submitButton.textContent = originalButtonText;
+        submitButton.disabled = false;
+      }
+    });
+  }
+});
