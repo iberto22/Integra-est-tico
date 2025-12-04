@@ -2,9 +2,9 @@
   {
     "id": "osteopatia",
     "title": "Osteopatia",
-    "shortDescription": "Tratamiento manual para restaurar el equilibrio del cuerpo y mejorar la movilidad.",
-    "fullDescription": "La osteopatía es una terapia manual que busca restaurar el equilibrio del cuerpo mediante técnicas de manipulación suave. Nuestros osteópatas certificados trabajan para identificar y tratar las causas subyacentes del dolor y la disfunción, mejorando la movilidad y promoviendo la salud integral.",
-    "image": "/static/img/logo-full.png",
+    "shortDescription": "Se utiliza para tratar dolores musculares, articulares, digestivos, tensiones crónicas, estrés y disfunciones que afectan al bienestar general.",
+    "fullDescription": "La osteopatía es un enfoque terapéutico manual que entiende el cuerpo como una unidad donde estructura y función están íntimamente relacionadas. A través de técnicas precisas, el osteópata busca restaurar el equilibrio global del organismo, mejorar la movilidad de los tejidos y favorecer la capacidad natural de autorregulación del cuerpo.",
+    "image": "/static/img/osteopatia.png",
     "benefits": [
       "Alivio del dolor muscular y articular",
       "Mejora de la movilidad y flexibilidad",
@@ -16,9 +16,9 @@
   {
     "id": "fisioterapia",
     "title": "Fisioteràpia",
-    "shortDescription": "Recuperación funcional mediante técnicas especializadas y ejercicios terapéuticos.",
+    "shortDescription": "restaurar la función, reducir el dolor y mejorar la calidad de vida de cada paciente, adaptando el tratamiento a sus necesidades concretas.",
     "fullDescription": "Nuestro servicio de fisioterapia ofrece tratamientos personalizados para la recuperación de lesiones, mejora de la función física y prevención de futuras dolencias. Utilizamos técnicas avanzadas y equipamiento especializado para garantizar los mejores resultados.",
-    "image": "/static/img/logo-full.png",
+    "image": "/static/img/fisioterapia.png",
     "benefits": [
       "Recuperación post-operatoria",
       "Tratamiento de lesiones deportivas",
@@ -32,7 +32,7 @@
     "title": "Indiba",
     "shortDescription": "Tecnología de radiofrecuencia para regeneración celular y recuperación acelerada.",
     "fullDescription": "INDIBA es una tecnología avanzada de radiofrecuencia que estimula la regeneración celular natural del cuerpo. Es efectiva para el tratamiento de lesiones, reducción del dolor y mejora de la circulación, acelerando significativamente los procesos de recuperación.",
-    "image": "/static/img/logo-full.png",
+    "image": "/static/img/indiba.jpeg",
     "benefits": [
       "Aceleración de la recuperación de lesiones",
       "Reducción de la inflamación",
@@ -46,13 +46,13 @@
     "title": "Acupuntura",
     "shortDescription": "Medicina tradicional china para equilibrar la energía y aliviar dolencias.",
     "fullDescription": "La acupuntura es una técnica milenaria de la medicina tradicional china que utiliza agujas finas para estimular puntos específicos del cuerpo. Este tratamiento ayuda a equilibrar la energía vital, aliviar el dolor y tratar diversas condiciones de salud de manera natural.",
-    "image": "/static/img/logo-full.png",
+    "image": "/static/img/acupuntura.png",
     "benefits": [
-      "Alivio del dolor crónico",
-      "Reducción del estrés y ansiedad",
-      "Mejora del sueño",
-      "Tratamiento de migrañas",
-      "Fortalecimiento del sistema inmunológico"
+      "Dolor crónico y agudo (espalda, cervicales, hombro, rodilla)",
+      "Ansiedad, estrés, insomnio",
+      "Migrañas y cefaleas",
+      "Desequilibrios hormonales y regulaciones menstruales",
+      "Fatiga y baja energía"
     ]
   },
   {
@@ -60,7 +60,7 @@
     "title": "Cambra hiperbàrica",
     "shortDescription": "Oxigenación celular avanzada para recuperación y bienestar óptimo.",
     "fullDescription": "La cámara hiperbárica es un tratamiento que aumenta la concentración de oxígeno en el cuerpo mediante presión atmosférica elevada. Este proceso acelera la curación, mejora el rendimiento deportivo y proporciona numerosos beneficios para la salud.",
-    "image": "/static/img/logo-full.png",
+    "image": "/static/img/camarahiper.jpeg",
     "benefits": [
       "Aceleración de la recuperación muscular",
       "Mejora del rendimiento deportivo",
