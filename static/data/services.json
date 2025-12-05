@@ -15,7 +15,7 @@
   },
   {
     "id": "fisioterapia",
-    "title": "Fisioteràpia",
+    "title": "Fisioterapia",
     "shortDescription": "restaurar la función, reducir el dolor y mejorar la calidad de vida de cada paciente, adaptando el tratamiento a sus necesidades concretas.",
     "fullDescription": "Nuestro servicio de fisioterapia ofrece tratamientos personalizados para la recuperación de lesiones, mejora de la función física y prevención de futuras dolencias. Utilizamos técnicas avanzadas y equipamiento especializado para garantizar los mejores resultados.",
     "image": "/static/img/fisioterapia.png",
@@ -57,7 +57,7 @@
   },
   {
     "id": "camara-hiperbarica",
-    "title": "Cambra hiperbàrica",
+    "title": "Camara hiperbárica",
     "shortDescription": "Oxigenación celular avanzada para recuperación y bienestar óptimo.",
     "fullDescription": "La cámara hiperbárica es un tratamiento que aumenta la concentración de oxígeno en el cuerpo mediante presión atmosférica elevada. Este proceso acelera la curación, mejora el rendimiento deportivo y proporciona numerosos beneficios para la salud.",
     "image": "/static/img/camarahiper.jpeg",
@@ -70,11 +70,11 @@
     ]
   },
   {
-    "id": "massatge",
-    "title": "Massatge",
+    "id": "masaje",
+    "title": "Masaje",
     "shortDescription": "Terapia manual para relajación, alivio del dolor y bienestar general.",
     "fullDescription": "Nuestros masajes terapéuticos combinan técnicas tradicionales y modernas para proporcionar relajación profunda, alivio del dolor muscular y mejora de la circulación. Cada sesión se personaliza según las necesidades específicas de cada paciente.",
-    "image": "/static/img/logo-full.png",
+    "image": "/static/img/masaje.jpeg",
     "benefits": [
       "Relajación muscular profunda",
       "Alivio del estrés y tensión",
@@ -85,10 +85,10 @@
   },
   {
     "id": "pressoterapia",
-    "title": "Pressoteràpia",
+    "title": "Presoterapia",
     "shortDescription": "Drenaje linfático mediante presión controlada para mejorar la circulación.",
     "fullDescription": "La presoterapia es un tratamiento que utiliza presión de aire controlada para estimular el sistema linfático y mejorar la circulación. Es ideal para la recuperación deportiva, reducción de la retención de líquidos y mejora de la salud vascular.",
-    "image": "/static/img/logo-full.png",
+    "image": "/static/img/presoterapia.png",
     "benefits": [
       "Mejora de la circulación linfática",
       "Reducción de la retención de líquidos",
@@ -99,16 +99,30 @@
   },
   {
     "id": "drenatge-limfatic",
-    "title": "Drenatge limfàtic",
+    "title": "Drenaje limfático",
     "shortDescription": "Masaje especializado para estimular el sistema linfático y eliminar toxinas.",
     "fullDescription": "El drenaje linfático es una técnica de masaje suave y rítmico que estimula el sistema linfático para eliminar toxinas y líquidos retenidos. Este tratamiento mejora la salud general, reduce la inflamación y fortalece el sistema inmunológico.",
-    "image": "/static/img/logo-full.png",
+    "image": "/static/img/drenaje.jpeg",
     "benefits": [
       "Eliminación de toxinas",
       "Reducción de la inflamación",
       "Fortalecimiento del sistema inmunológico",
       "Mejora de la piel",
       "Alivio de la retención de líquidos"
+    ]
+  },
+  {
+    "id": "medicina-ayurvedica",
+    "title": "Medicina Ayurvédica",
+    "shortDescription": "La medicina ayurvédica ofrece un enfoque profundo, holístico y personalizado que complementa perfectamente otras terapias como fisioterapia, osteopatía o cámara hiperbárica.",
+    "fullDescription": "La Medicina Ayurvédica es un sistema terapéutico originario de la India con más de 5.000 años de historia, considerado uno de los métodos de salud integral más antiguos del mundo. Su objetivo es restaurar el equilibrio entre cuerpo, mente y energía, promoviendo la capacidad natural del organismo para sanarse. El Ayurveda entiende que cada persona tiene una combinación única de doshas (Vata, Pitta y Kapha), que determinan su constitución física, emocional y metabólica. Cuando estos doshas se desequilibran, aparecen síntomas y enfermedades.",
+    "image": "/static/img/ayurvedica.jpeg",
+    "benefits": [
+      "Estrés, ansiedad y fatiga crónica",
+      "Trastornos digestivos y metabólicos",
+      "Dolor crónico y tensiones musculares",
+      "Desequilibrios hormonales",
+      "Inflamación y baja energía"
     ]
   }
 ]
